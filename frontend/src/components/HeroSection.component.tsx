@@ -6,9 +6,8 @@ const HeroSection = () => {
     <Image
       src={HeroImage}
       alt="hero-image"
-      width={1920}
-      height={600}
       className="max-h-[600px] w-full object-cover"
+      priority
     />
   );
 };
