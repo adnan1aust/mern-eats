@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import colors from "colors";
 import mongoose from "mongoose";
+import userRoute from "./routes/userRoutes";
 
 import "dotenv/config";
 
@@ -14,11 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", async (req: Request, res: Response) => {
-  res.json({
-    message: "Hello",
-  });
-});
+app.use("/api/v1/users", userRoute);
 
 app.listen(7000, () => {
   console.log("SERVER IS RUNNING ON PORT 7000".green);

@@ -35,9 +35,9 @@ const UserNameMenu = () => {
             </div>
           </MenubarItem>
           <MenubarSeparator />
-          <MenubarItem className="flex justify-around">
+          <MenubarItem className="flex justify-around" onClick={() => logout()}>
             <div className="flex gap-2 items-center">
-              <button onClick={() => logout()}>Log Out</button>
+              <button>Log Out</button>
               <LogOut className="w-4 h-4" />
             </div>
           </MenubarItem>
