@@ -11,10 +11,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     throw new Error("Missing Auth0 environment variables.");
   }
 
-  const onRedirectCallback = (appState?: AppState, user?: User) => {
-    console.log("USER", user);
-  };
-
   return (
     <Auth0Provider
       domain={domain}
@@ -22,7 +18,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       authorizationParams={{
         redirect_uri: redirectUri,
       }}
-      onRedirectCallback={onRedirectCallback}
     >
       {children}
     </Auth0Provider>
