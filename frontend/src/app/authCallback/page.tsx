@@ -13,12 +13,12 @@ const AuthCallbackPage = () => {
   const addUserToDB = async () => {
     if (user?.sub && user?.email && !isCalled.current) {
       isCalled.current = true;
-      const { error } = await createUser({
+      const { error, data } = await createUser({
         auth0Id: user?.sub,
         email: user?.email,
       });
       if (error) {
-        console.error("Could not create the user!", error);
+        console.error("Could not create the user!", data);
       } else {
         router.push("/");
       }
