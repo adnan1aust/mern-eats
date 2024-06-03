@@ -1,39 +1,38 @@
 "use client";
 
-import { useAuth0 } from "@auth0/auth0-react";
 import { createUser } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { Loader2 } from "lucide-react";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const AuthCallbackPage = () => {
-  const { user } = useAuth0();
+  const { user } = useUser();
   const router = useRouter();
   const isCalled = useRef(false);
 
   const addUserToDB = async () => {
-    if (user?.sub && user.email && !isCalled.current) {
+    if (user?.sub && user?.email && !isCalled.current) {
       isCalled.current = true;
       const { error } = await createUser({
         auth0Id: user?.sub,
         email: user?.email,
       });
       if (error) {
-        alert("Could not create the user!");
+        console.error("Could not create the user!", error);
       } else {
         router.push("/");
       }
     }
   };
-  useEffect(() => {
-    addUserToDB();
-  }, []);
 
-  return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <Loader2 className="animate-spin h-24 w-24 text-primary" />
-    </div>
-  );
+  useEffect(() => {
+    if (user && !isCalled.current) {
+      addUserToDB();
+      isCalled.current = true;
+    }
+  }, [user]);
+
+  return <div className=""></div>;
 };
 
 export default AuthCallbackPage;
