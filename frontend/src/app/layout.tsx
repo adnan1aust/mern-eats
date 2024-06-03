@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header.component";
-import HeroSection from "@/components/HeroSection.component";
 import Footer from "@/components/Footer.component";
 import AuthProvider from "@/components/AuthZeroProviderWIthNavigate.component";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +25,19 @@ export default function RootLayout({
         <AuthProvider>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <HeroSection />
-            <div className="container mx-auto flex-1 py-10"> {children}</div>
+            <Toaster
+              visibleToasts={1}
+              position="bottom-right"
+              richColors
+              toastOptions={{
+                style: {
+                  color: "rgb(249,115,22)",
+                  backgroundColor: "white",
+                  borderColor: "rgb(249,115,22)",
+                },
+              }}
+            />
+            <div> {children}</div>
             <Footer />
           </div>
         </AuthProvider>

@@ -6,7 +6,7 @@ const HeroSection = () => {
     <Image
       src={HeroImage}
       alt="hero-image"
-      className="max-h-[600px] w-full object-cover"
+      className="max-h-[600px] min-w-screen object-cover"
       priority
     />
   );

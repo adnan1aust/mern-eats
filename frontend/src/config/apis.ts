@@ -1,5 +1,5 @@
-const CREATE_USER_API = "users";
+const USER_API = "users";
 
 export const APIS = {
-  CREATE_USER_API,
+  USER_API,
 };

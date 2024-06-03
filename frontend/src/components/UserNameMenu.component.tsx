@@ -28,20 +28,22 @@ const UserNameMenu = async () => {
           </div>
         </MenubarTrigger>
         <MenubarContent>
-          <MenubarItem className="flex justify-around hover:text-primary">
-            <div className="flex gap-2 items-center">
-              <p>Profile</p> <UserRoundCog className="w-4 h-4" />
-            </div>
-          </MenubarItem>
+          <Link href="/userProfile" className="hover:text-primary">
+            <MenubarItem className="flex justify-around ">
+              <div className="flex gap-2 items-center">
+                <p>Profile</p> <UserRoundCog className="w-4 h-4" />
+              </div>
+            </MenubarItem>
+          </Link>
           <MenubarSeparator />
-          <MenubarItem className="flex justify-around">
-            <Link href="/api/auth/logout">
+          <Link href="/api/auth/logout" className="hover:text-primary">
+            <MenubarItem className="flex justify-around">
               <div className="flex gap-2 items-center">
                 <button>Log Out</button>
                 <LogOut className="w-4 h-4" />
               </div>
-            </Link>
-          </MenubarItem>
+            </MenubarItem>
+          </Link>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

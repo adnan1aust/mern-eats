@@ -5,7 +5,7 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 const MainNav = async () => {
   const session = await getSession();
-  console.log(session);
+  /*console.log(session); */
   return (
     <>
       {

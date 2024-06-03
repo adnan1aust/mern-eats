@@ -43,7 +43,9 @@ const MobileNav = async () => {
           <SheetDescription>
             {session?.user ? (
               <div className="w-full flex flex-col gap-2">
-                <Button className="w-full font-bold">Profile</Button>
+                <Button className="w-full font-bold">
+                  <Link href="/userProfile">Profile</Link>
+                </Button>
                 <Link href="/api/auth/logout">
                   <Button className="w-full font-bold  bg-slate-700 hover:bg-slate-600">
                     Log out

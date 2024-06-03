@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link
           className="text-3xl font-bold tracking-tight text-primary"
-          href=""
+          href="/"
         >
           MernEats.com
         </Link>
