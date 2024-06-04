@@ -3,6 +3,11 @@ import { getCurrentUser } from "@/lib/actions";
 
 const Page = async () => {
   const { data, error } = await getCurrentUser();
+  if (error) {
+    return (
+      <div className="text-center text-red-500">Something went wrong!</div>
+    );
+  }
 
   return (
     <div>

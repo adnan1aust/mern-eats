@@ -19,9 +19,8 @@ const AuthCallbackPage = () => {
       });
       if (error) {
         console.error("Could not create the user!", data);
-      } else {
-        router.push("/");
       }
+      router.push("/");
     }
   };
 
