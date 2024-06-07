@@ -36,6 +36,14 @@ const UserNameMenu = async () => {
             </MenubarItem>
           </Link>
           <MenubarSeparator />
+          <Link href="/manageRestaurant" className="hover:text-primary">
+            <MenubarItem className="flex justify-around ">
+              <div className="flex gap-2 items-center">
+                <p>Restaurant</p> <UserRoundCog className="w-4 h-4" />
+              </div>
+            </MenubarItem>
+          </Link>
+          <MenubarSeparator />
           <Link href="/api/auth/logout" className="hover:text-primary">
             <MenubarItem className="flex justify-around">
               <div className="flex gap-2 items-center">

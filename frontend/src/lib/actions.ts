@@ -2,9 +2,9 @@
 
 import { postToAPI, putToAPI, getFromAPI } from "./utils";
 import { APIS } from "@/config/apis";
-import { userPayloadType } from "@/types/types";
+import { UserType } from "@/types/types";
 
-export async function createUser(payload: userPayloadType) {
+export async function createUser(payload: UserType) {
   return await postToAPI(APIS.USER_API, payload);
 }
 
@@ -19,4 +19,8 @@ export async function updateUser(payload: {
   country: string;
 }) {
   return await putToAPI(APIS.USER_API, payload);
+}
+
+export async function addRestaurant(payload: any) {
+  return await postToAPI(APIS.RESTAURANT_API, payload);
 }
